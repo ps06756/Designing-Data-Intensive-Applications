@@ -1,29 +1,37 @@
-# Designing-Data-Intensive-Applications
+# Designing Data-Intensive Applications (2nd Edition)
 
-This repository explains the concepts from "Designing Data-Intensive Applications" by Martin Kleppmann, with chapter-by-chapter breakdowns and practical examples.
+This repository explains the concepts from "Designing Data-Intensive Applications" by Martin Kleppmann (with Chris Riccomini), with chapter-by-chapter breakdowns and practical examples. Notes track the **2nd edition**.
 
 ## Chapters
 
-- [Chapter 1: Reliable, Scalable, and Maintainable Applications](./chapter-01-reliable-scalable-maintainable.md) - Foundation chapter covering the three fundamental concerns in software systems: reliability (fault tolerance), scalability (handling growth), and maintainability (operability, simplicity, evolvability).
+- [Chapter 1: Trade-Offs in Data Systems Architecture](./chapter-01-tradeoffs-data-systems.md) - Frames the foundational choices in data systems: operational vs analytical (OLTP vs OLAP), data warehousing vs data lakes, systems of record vs derived data, cloud vs self-hosting, cloud-native architecture (separation of storage/compute, object stores), and distributed vs single-node systems.
 
-- [Chapter 2: Data Models and Query Languages](./chapter-02-data-models-query-languages.md) - Comprehensive exploration of data models including relational (SQL), document (NoSQL), and graph databases, along with their query languages, trade-offs, and when to use each model.
+- [Chapter 2: Defining Nonfunctional Requirements](./chapter-02-nonfunctional-requirements.md) - Case study of a social network home timelines to ground reliability, scalability, and maintainability in concrete numbers; covers latency vs response time vs throughput, percentiles (p50/p95/p99/p999), SLOs/SLAs, tail latency amplification, shared-memory/shared-disk/shared-nothing architectures, and metastable failures.
 
-- [Chapter 3: Storage and Retrieval](./chapter-03-storage-retrieval.md) - Deep dive into how databases store and retrieve data, covering hash indexes, SSTables, LSM-trees, B-trees, and the differences between OLTP (row-oriented) and OLAP (column-oriented) storage engines.
+- [Chapter 3: Data Models and Query Languages](./chapter-03-data-models-query-languages.md) - Relational vs document models, normalization vs denormalization, many-to-many relationships, analytics schemas (star, snowflake), graph models (property graphs, Cypher, SPARQL, Datalog), GraphQL, event sourcing and CQRS, plus DataFrames for ML workloads.
 
-- [Chapter 4: Encoding and Evolution](./chapter-04-encoding-evolution.md) - Comprehensive guide to data encoding formats (JSON, XML, Thrift, Protocol Buffers, Avro), schema evolution strategies, backward/forward compatibility, and dataflow patterns through databases, services, and message queues.
+- [Chapter 4: Storage and Retrieval](./chapter-04-storage-retrieval.md) - Log-structured storage (LSM-trees) and B-trees for OLTP, multicolumn/secondary indexes, column-oriented storage for analytics, cloud data warehouses, compilation vs vectorization, materialized views, full-text search, and vector embeddings for similarity/ML search.
 
-- [Chapter 5: Replication](./chapter-05-replication.md) - Explores replication strategies including single-leader, multi-leader, and leaderless replication, along with handling consistency challenges and conflicts.
+- [Chapter 5: Encoding and Evolution](./chapter-05-encoding-evolution.md) - Encoding formats (JSON, XML, Protobuf, Avro, Thrift), the merits of schemas, and four modes of dataflow: through databases, through services (REST/RPC), through durable execution/workflows (Temporal, Cadence), and through event-driven architectures. Backward/forward compatibility for schema evolution.
 
-- [Chapter 6: Partitioning](./chapter-06-partitioning.md) - Covers partitioning strategies (sharding) for scalability, including key-range and hash-based partitioning, secondary indexes, rebalancing techniques, and request routing approaches.
+- [Chapter 6: Replication](./chapter-06-replication.md) - Single-leader replication (sync/async, failover, replication logs), replication lag problems (read-your-writes, monotonic reads), multi-leader topologies and conflict resolution (LWW, CRDTs), leaderless replication with quorums, multi-region operation, and detecting concurrent writes via version vectors.
 
-- [Chapter 7: Transactions](./chapter-07-transactions.md) - Deep dive into ACID properties, isolation levels (Read Committed, Snapshot Isolation, Serializable), concurrency control mechanisms (2PL, MVCC, SSI), and distributed transactions with two-phase commit.
+- [Chapter 7: Sharding](./chapter-07-sharding.md) - Why shard, sharding by key range vs hash of key, skewed workloads and hot-spot mitigation (random suffixes, virtual nodes), automatic vs manual rebalancing, request routing, and local vs global secondary indexes.
 
-- [Chapter 8: The Trouble with Distributed Systems](./chapter-08-distributed-systems-trouble.md) - Explores the fundamental challenges of distributed systems including unreliable networks, clock synchronization issues, process pauses, partial failures, Byzantine faults, and system models for reasoning about failures.
+- [Chapter 8: Transactions](./chapter-08-transactions.md) - ACID semantics, single-object vs multi-object operations, weak isolation levels (Read Committed, Snapshot Isolation, write skew, phantoms), serializability via serial execution, 2PL, or SSI, distributed transactions with two-phase commit, and exactly-once message processing.
 
-- [Chapter 9: Consistency and Consensus](./chapter-09-consistency-consensus.md) - Comprehensive coverage of consistency models (from eventual consistency to linearizability), ordering guarantees, causality, consensus algorithms (2PC, Paxos, Raft), and coordination services (ZooKeeper, etcd, Consul) for building fault-tolerant distributed systems.
+- [Chapter 9: The Trouble with Distributed Systems](./chapter-09-distributed-systems-trouble.md) - Unreliable networks and the limits of TCP, timeouts and unbounded delays, monotonic vs time-of-day clocks and clock synchronization (NTP, GPS, Spanner TrueTime), process pauses, distributed locks and leases (Redlock critique), Byzantine faults, system models, and formal verification (TLA+, Jepsen).
 
-- [Chapter 10: Batch Processing](./chapter-10-batch-processing.md) - In-depth exploration of batch processing systems from Unix tools to MapReduce and modern dataflow engines (Spark, Flink), covering distributed filesystems (HDFS), join algorithms, graph processing (Pregel model), fault tolerance strategies, and the evolution toward declarative SQL interfaces.
+- [Chapter 10: Consistency and Consensus](./chapter-10-consistency-consensus.md) - Linearizability, ordering guarantees, Lamport clocks, vector clocks, linearizable ID generators (Snowflake), consensus algorithms (Paxos, Raft), total order broadcast, and coordination services (ZooKeeper, etcd, Consul).
 
-- [Chapter 11: Stream Processing](./chapter-11-stream-processing.md) - Comprehensive guide to stream processing covering event streams, message brokers (Kafka), change data capture (CDC), event sourcing, stream joins (stream-stream, stream-table), windowing operations, handling time and late events with watermarks, fault tolerance with exactly-once semantics, and comparison of stream processing frameworks.
+- [Chapter 11: Batch Processing](./chapter-11-batch-processing.md) - Unix tools as the original batch processor, distributed filesystems (HDFS) and object stores (S3), MapReduce, Dataflow engines (Spark, Flink, Beam), shuffling strategies, join algorithms (sort-merge, broadcast hash), SQL-on-Hadoop, and use cases (ETL, analytics, ML, serving).
 
-- [Chapter 12: The Future of Data Systems](./chapter-12-future-data-systems.md) - Integrating everything together: data integration patterns, unbundling databases, derived data with Lambda and Kappa architectures, CQRS, end-to-end correctness with idempotence, enforcing constraints in distributed systems, trust and verification with audit logs, and ethical considerations for privacy and fairness in data systems design.
+- [Chapter 12: Stream Processing](./chapter-12-stream-processing.md) - Transmitting event streams (messaging systems vs log-based brokers like Kafka), Change Data Capture (CDC), event sourcing, stream joins (stream-stream, stream-table), windowing and watermarks for time, and exactly-once fault tolerance.
+
+- [Chapter 13: A Philosophy of Streaming Systems](./chapter-13-philosophy-streaming-systems.md) - Data integration via derived data, batch/stream unification, unbundling databases, designing applications around dataflow, observing derived state, the end-to-end argument, enforcing cross-system constraints, timeliness vs integrity, and self-auditing systems.
+
+- [Chapter 14: Doing the Right Thing](./chapter-14-doing-the-right-thing.md) - Ethical responsibilities in data systems: bias and discrimination in predictive analytics, feedback loops, privacy and tracking, consent, GDPR/CCPA implications, data as power, and the parallels to Industrial-Revolution-era regulation.
+
+## Source
+
+The 2nd edition PDF lives at `~/Downloads/designing-data-intensive-applications-the-big-ideas-behind-reliable-scalable-and-maintainable-systems-2_compress.pdf`.
