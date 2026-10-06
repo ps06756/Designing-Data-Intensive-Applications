@@ -2,6 +2,8 @@
 
 This repository explains the concepts from "Designing Data-Intensive Applications" by Martin Kleppmann, with chapter-by-chapter breakdowns and practical examples.
 
+Want to study one topic instead of a whole chapter? The [Topic Index](./TOPICS.md) links each concept to the section that covers it, along with what to read first, and offers reading paths for common goals.
+
 ## Chapters
 
 - [Chapter 1: Reliable, Scalable, and Maintainable Applications](./chapter-01-reliable-scalable-maintainable.md) - Foundation chapter covering the three fundamental concerns in software systems: reliability (fault tolerance), scalability (handling growth), and maintainability (operability, simplicity, evolvability).
