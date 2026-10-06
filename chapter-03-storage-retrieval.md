@@ -1509,6 +1509,6 @@ graph TB
 
 ---
 
-**Next**: [Chapter 4: Encoding and Evolution] - How to handle schema changes and evolving data formats (not yet written)
+**Next**: [Chapter 4: Encoding and Evolution](./chapter-04-encoding-evolution.md)
 
-**Previous**: [Chapter 2: Data Models and Query Languages](./chapter-2-data-models-query-languages.md)
+**Previous**: [Chapter 2: Data Models and Query Languages](./chapter-02-data-models-query-languages.md)

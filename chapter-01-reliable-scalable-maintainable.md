@@ -1264,4 +1264,4 @@ These three concerns (reliability, scalability, maintainability) are the foundat
 
 ---
 
-**Next**: [Chapter 5: Replication](./chapter-5-replication.md) explores how to keep copies of data on multiple machines for redundancy and better performance.
+**Next**: [Chapter 2: Data Models and Query Languages](./chapter-02-data-models-query-languages.md)

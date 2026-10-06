@@ -1740,4 +1740,8 @@ Partitioning is a powerful technique, but it adds complexity. The right strategy
 - Consistency requirements
 - Operational complexity tolerance
 
-Next chapter will discuss transactions - maintaining correctness guarantees even in the face of partitioning, replication, and failures.
+---
+
+**Previous**: [Chapter 5: Replication](./chapter-05-replication.md)
+
+**Next**: [Chapter 7: Transactions](./chapter-07-transactions.md)

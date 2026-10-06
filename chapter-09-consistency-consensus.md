@@ -1464,3 +1464,9 @@ Consensus is fundamental to distributed systems, but it's not the only way to bu
 The next frontier: **CRDTs** (Conflict-free Replicated Data Types) - data structures that converge without consensus. But that's beyond the scope of this book!
 
 **Final thought**: Building distributed systems is hard. Understanding consistency, ordering, and consensus helps you make informed trade-offs between consistency, availability, and performance.
+
+---
+
+**Previous**: [Chapter 8: The Trouble with Distributed Systems](./chapter-08-distributed-systems-trouble.md)
+
+**Next**: [Chapter 10: Batch Processing](./chapter-10-batch-processing.md)

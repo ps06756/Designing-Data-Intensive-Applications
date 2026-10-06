@@ -401,6 +401,8 @@ graph LR
 
 ```python
 # Event sourcing for shopping cart
+from datetime import datetime
+
 class ShoppingCartEvent:
     pass
 
@@ -416,10 +418,10 @@ class ItemRemoved(ShoppingCartEvent):
         self.timestamp = datetime.now()
 
 class ShoppingCart:
-    def __init__(self, events=[]):
+    def __init__(self, events=None):
         self.items = {}
         # Rebuild state from events
-        for event in events:
+        for event in events or []:
             self.apply(event)
 
     def apply(self, event):
@@ -1294,3 +1296,5 @@ graph TB
 ---
 
 **Previous**: [Chapter 10: Batch Processing](./chapter-10-batch-processing.md)
+
+**Next**: [Chapter 12: The Future of Data Systems](./chapter-12-future-data-systems.md)

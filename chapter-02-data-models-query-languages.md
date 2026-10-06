@@ -1203,6 +1203,6 @@ graph TB
 
 ---
 
-**Next**: [Chapter 3: Storage and Retrieval] - How databases store data on disk and retrieve it efficiently (not yet written)
+**Next**: [Chapter 3: Storage and Retrieval](./chapter-03-storage-retrieval.md)
 
-**Previous**: [Chapter 1: Reliable, Scalable, and Maintainable Applications](./chapter-1-reliable-scalable-maintainable.md)
+**Previous**: [Chapter 1: Reliable, Scalable, and Maintainable Applications](./chapter-01-reliable-scalable-maintainable.md)

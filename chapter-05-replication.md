@@ -1363,3 +1363,9 @@ class VersionVector:
 - Conflicts inevitable with multi-leader or leaderless replication
 - Choose replication strategy based on availability, consistency, and latency requirements
 - No one-size-fits-all solution - understand trade-offs for your application
+
+---
+
+**Previous**: [Chapter 4: Encoding and Evolution](./chapter-04-encoding-evolution.md)
+
+**Next**: [Chapter 6: Partitioning](./chapter-06-partitioning.md)

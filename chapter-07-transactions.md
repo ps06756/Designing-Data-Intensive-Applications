@@ -2076,3 +2076,9 @@ Transactions are an abstraction layer that allows applications to pretend that c
 *MySQL's "Repeatable Read" is actually snapshot isolation with some differences.
 
 Transactions are a powerful abstraction, but they're not a silver bullet. In distributed systems (Chapter 8 and 9), we'll see how the guarantees weaken and what alternatives exist.
+
+---
+
+**Previous**: [Chapter 6: Partitioning](./chapter-06-partitioning.md)
+
+**Next**: [Chapter 8: The Trouble with Distributed Systems](./chapter-08-distributed-systems-trouble.md)

@@ -1397,6 +1397,6 @@ graph TB
 
 ---
 
-**Next**: [Chapter 5: Replication](./chapter-5-replication.md) - Keeping copies of data on multiple machines
+**Next**: [Chapter 5: Replication](./chapter-05-replication.md)
 
-**Previous**: [Chapter 3: Storage and Retrieval](./chapter-3-storage-retrieval.md)
+**Previous**: [Chapter 3: Storage and Retrieval](./chapter-03-storage-retrieval.md)

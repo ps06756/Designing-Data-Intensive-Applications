@@ -1349,6 +1349,6 @@ graph TB
 
 ---
 
-**Next**: [Chapter 11: Stream Processing] - Processing unbounded data in real-time (not yet written)
+**Next**: [Chapter 11: Stream Processing](./chapter-11-stream-processing.md)
 
-**Previous**: [Chapter 9: Consistency and Consensus](./chapter-9-consistency-consensus.md)
+**Previous**: [Chapter 9: Consistency and Consensus](./chapter-09-consistency-consensus.md)

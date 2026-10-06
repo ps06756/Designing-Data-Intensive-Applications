@@ -1040,28 +1040,28 @@ graph TB
 
 - **PBFT** (Practical Byzantine Fault Tolerance)
 - **Blockchain** consensus (Bitcoin, Ethereum)
-- Require **2f + 1** honest nodes to tolerate **f** Byzantine nodes
+- Require **3f + 1 total replicas** to tolerate **f** Byzantine faults; at least **2f + 1** of those replicas are honest
 
 ```python
-# Byzantine Fault Tolerance: Need 2f+1 nodes to tolerate f faulty nodes
+# Byzantine Fault Tolerance: Need 3f+1 total replicas to tolerate f faulty nodes
 
 def bft_required_nodes(max_faulty_nodes):
     """
     Calculate minimum nodes needed for Byzantine Fault Tolerance
 
-    To tolerate f Byzantine nodes, need at least 2f+1 total nodes
+    To tolerate f Byzantine faults, need at least 3f+1 total replicas
     """
     f = max_faulty_nodes
-    return 2 * f + 1
+    return 3 * f + 1
 
 # Example:
-# Tolerate 1 Byzantine node: need 3 nodes (2*1+1)
-# Tolerate 2 Byzantine nodes: need 5 nodes (2*2+1)
-# Tolerate 3 Byzantine nodes: need 7 nodes (2*3+1)
+# Tolerate 1 Byzantine node: need 4 replicas (3*1+1)
+# Tolerate 2 Byzantine nodes: need 7 replicas (3*2+1)
+# Tolerate 3 Byzantine nodes: need 10 replicas (3*3+1)
 
-print(bft_required_nodes(1))  # 3
-print(bft_required_nodes(2))  # 5
-print(bft_required_nodes(3))  # 7
+print(bft_required_nodes(1))  # 4
+print(bft_required_nodes(2))  # 7
+print(bft_required_nodes(3))  # 10
 ```
 
 **When to use BFT**:
@@ -1401,3 +1401,9 @@ graph TB
 ```
 
 The key insight: **Distributed systems are fundamentally different from single-machine systems**. We must design with failures in mind from the start, not as an afterthought.
+
+---
+
+**Previous**: [Chapter 7: Transactions](./chapter-07-transactions.md)
+
+**Next**: [Chapter 9: Consistency and Consensus](./chapter-09-consistency-consensus.md)
